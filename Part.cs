@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace lab11;
+﻿namespace lab11;
 
 public class Part
 {

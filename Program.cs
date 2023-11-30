@@ -10,6 +10,6 @@ internal class Program
         var taskInfo = taskManager.Generate(parts, 8);
         await taskInfo;
         FilterParts filter = new FilterParts();
-        var result = filter.GetQuantityGroupsByName(parts, "ac", 4);
+        var result = filter.GetQuantityGroupsByName(parts, "6", 4);
     }
 }
