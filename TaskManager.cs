@@ -4,7 +4,7 @@ namespace lab11;
 
 public class TaskManager
 {
-    public async Task Generate(Person[] persons, int threadNumber)
+    public async Task Generate(Part[] persons, int threadNumber)
     {
         if (persons != null && threadNumber > 0)
         {
@@ -13,7 +13,7 @@ public class TaskManager
             for (int i = 0; i < threadNumber; i++)
             {
                 var startIndex = i * chunkSize;
-                var endIndex = (i == 3) ? persons.Length : (i + 1) * chunkSize;
+                var endIndex = (i == threadNumber-1) ? persons.Length : (i + 1) * chunkSize;
 
                 tasks[i] = GeneratePersons(persons, startIndex, endIndex);
             }
@@ -25,16 +25,16 @@ public class TaskManager
         }
     }
 
-    private Task GeneratePersons(Person[] persons, int startIndex, int endIndex)
+    private Task GeneratePersons(Part[] persons, int startIndex, int endIndex)
     {
         for (var i = startIndex; i < endIndex; i++)
         {
-            persons[i] = new Person()
+            persons[i] = new Part()
             {
                 Id = i,
                 Name = GenerateName(),
-                Age = Random.Shared.Next(1, 100),
-                Gender = Random.Shared.Next(1, 3)
+                Quantity = Random.Shared.Next(1,20),
+                Price = Random.Shared.Next(1,50)*100
             };
         }
         

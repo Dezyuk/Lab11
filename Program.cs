@@ -5,17 +5,11 @@ internal class Program
 {
     private static async Task Main(string[] args)
     {
-        Person[] persons = new Person[10000];
-
+        Part[] parts = new Part[10000];
         TaskManager taskManager = new TaskManager();
-        var taskInfo = taskManager.Generate(persons, 8);
-
+        var taskInfo = taskManager.Generate(parts, 8);
         await taskInfo;
-
-        FilterPersons filter = new FilterPersons();
-
-        var result = filter.GetGenderGroupsByName(persons, "a", 15);
-
-
+        FilterParts filter = new FilterParts();
+        var result = filter.GetQuantityGroupsByName(parts, "ac", 4);
     }
 }

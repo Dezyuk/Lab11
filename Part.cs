@@ -2,12 +2,12 @@
 
 namespace lab11;
 
-public class Person
+public class Part
 {
     private int _id;
     private string _name;
-    private int _age;
-    private int _gender;
+    private int _quantity;
+    private int _price;
 
     public int Id
     {
@@ -21,15 +21,15 @@ public class Person
         set => _name = value ?? throw new ArgumentNullException(nameof(value));
     }
 
-    public int Age
+    public int Quantity
     {
-        get => _age;
-        set => _age = value;
+        get => _quantity;
+        set => _quantity = value;
     }
 
-    public int Gender
+    public int Price
     {
-        get => _gender;
-        set => _gender = value;
+        get => _price;
+        set => _price = value;
     }
 }
